@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical">
-
+    tools:context=".ProduitForm">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -25,9 +22,10 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="5dp"
-                tools:text="Ajout Produit"
+                android:text="Ajout Produit"
                 android:textAlignment="center"
                 android:textAppearance="?android:attr/textAppearanceSmall"
+                tools:text="Ajout Produit"
                 tools:textSize="30dp" />
 
             <android.support.constraint.ConstraintLayout
@@ -40,9 +38,10 @@
                     android:id="@+id/libLib"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Libellé :"
+                    android:text="Libellé :"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Libellé :" />
 
                 <EditText
                     android:id="@+id/formLib"
@@ -63,11 +62,11 @@
                     android:id="@+id/libIngredient"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Ingrédient :"
+                    android:text="Ingrédient :"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
 
-                    />
+                    tools:text="Ingrédient :" />
 
                 <EditText
                     android:id="@+id/formIngredient"
@@ -89,11 +88,11 @@
                     android:id="@+id/libLien"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Lien : "
+                    android:text="Lien : "
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
 
-                    />
+                    tools:text="Lien : " />
 
                 <EditText
                     android:id="@+id/formLien"
@@ -114,11 +113,11 @@
                     android:id="@+id/libQuantite"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Quantité :"
+                    android:text="Quantité :"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
 
-                    />
+                    tools:text="Quantité :" />
 
                 <EditText
                     android:id="@+id/formQuantite"
@@ -139,11 +138,11 @@
                     android:id="@+id/libEnergie"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Energie : "
+                    android:text="Energie : "
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
 
-                    />
+                    tools:text="Energie : " />
 
                 <EditText
                     android:id="@+id/formEnergie"
@@ -164,11 +163,11 @@
                     android:id="@+id/libMatiereGrasse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Matière grasse : "
+                    android:text="Matière grasse : "
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
 
-                    />
+                    tools:text="Matière grasse : " />
 
                 <EditText
                     android:id="@+id/formMatiereGrasse"
@@ -189,11 +188,11 @@
                     android:id="@+id/libAcideGras"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Acide gras :"
+                    android:text="Acide gras :"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
 
-                    />
+                    tools:text="Acide gras :" />
 
                 <EditText
                     android:id="@+id/formAcideGras"
@@ -214,11 +213,11 @@
                     android:id="@+id/libGlucide"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Glucide :"
+                    android:text="Glucide :"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
 
-                    />
+                    tools:text="Glucide :" />
 
                 <EditText
                     android:id="@+id/formGlucide"
@@ -239,11 +238,11 @@
                     android:id="@+id/libSucre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Sucre :"
+                    android:text="Sucre :"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
 
-                    />
+                    tools:text="Sucre :" />
 
                 <EditText
                     android:id="@+id/formSucre"
@@ -264,9 +263,10 @@
                     android:id="@+id/libFibre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Fibre :"
+                    android:text="Fibre :"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Fibre :" />
 
                 <EditText
                     android:id="@+id/formFibre"
@@ -287,11 +287,11 @@
                     android:id="@+id/libProteine"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Protéine :"
+                    android:text="Protéine :"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
 
-                    />
+                    tools:text="Protéine :" />
 
                 <EditText
                     android:id="@+id/formProteine"
@@ -312,11 +312,11 @@
                     android:id="@+id/libSel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Sel :"
+                    android:text="Sel :"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
 
-                    />
+                    tools:text="Sel :" />
 
                 <EditText
                     android:id="@+id/formSel"
@@ -328,15 +328,21 @@
             </android.support.constraint.ConstraintLayout>
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/Valider"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="Button" />
+                android:text="valider"
+                tools:text="valider" />
+
+            <Button
+                android:id="@+id/Annuler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="back"
+                android:text="annuler"
+                tools:text="annuler" />
 
         </LinearLayout>
 
     </ScrollView>
-
-
-</LinearLayout>
-
+</android.support.constraint.ConstraintLayout>
