@@ -12,9 +12,9 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center_horizontal">
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textViewCol1"
@@ -25,8 +25,7 @@
                 android:text="Ajout Produit"
                 android:textAlignment="center"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                tools:text="Ajout Produit"
-                tools:textSize="30dp" />
+                android:textSize="30sp" />
 
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/libelle"
@@ -65,7 +64,6 @@
                     android:text="Ingrédient :"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-
                     tools:text="Ingrédient :" />
 
                 <EditText
@@ -91,7 +89,6 @@
                     android:text="Lien : "
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-
                     tools:text="Lien : " />
 
                 <EditText
@@ -141,7 +138,6 @@
                     android:text="Energie : "
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-
                     tools:text="Energie : " />
 
                 <EditText
@@ -166,7 +162,6 @@
                     android:text="Matière grasse : "
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-
                     tools:text="Matière grasse : " />
 
                 <EditText
@@ -191,7 +186,6 @@
                     android:text="Acide gras :"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-
                     tools:text="Acide gras :" />
 
                 <EditText
@@ -216,7 +210,6 @@
                     android:text="Glucide :"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-
                     tools:text="Glucide :" />
 
                 <EditText
@@ -241,7 +234,6 @@
                     android:text="Sucre :"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-
                     tools:text="Sucre :" />
 
                 <EditText
@@ -290,7 +282,6 @@
                     android:text="Protéine :"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-
                     tools:text="Protéine :" />
 
                 <EditText
@@ -315,7 +306,6 @@
                     android:text="Sel :"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-
                     tools:text="Sel :" />
 
                 <EditText
