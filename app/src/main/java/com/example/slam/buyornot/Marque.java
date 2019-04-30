@@ -1,27 +1,44 @@
 package com.example.slam.buyornot;
 
+import java.util.ArrayList;
+
 public class Marque {
-    private String marqueCode;
-    private String marqueLibelle;
+    private int id;
+    private String produit;
+    private ArrayList<Produit> lesProduits;
 
-    public Marque(String marqueCode, String marqueLibelle){
-        this.marqueCode = marqueCode;
-        this.marqueLibelle = marqueLibelle;
+    public Marque() {
     }
 
-    public String getMarqueCode() {
-        return marqueCode;
+    public Marque(int id, String produit) {
+        this.id = id;
+        this.produit = produit;
     }
 
-    public void setMarqueCode(String marqueCode) {
-        this.marqueCode = marqueCode;
+    public int getId() {
+        return id;
     }
 
-    public String getMarqueLibelle() {
-        return marqueLibelle;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setMarqueLibelle(String marqueLibelle) {
-        this.marqueLibelle = marqueLibelle;
+    public String getProduit() {
+        return produit;
+    }
+
+    public void setProduit(String produit) {
+        this.produit = produit;
+    }
+
+    public ArrayList<Produit> getLesProduits() { return lesProduits; }
+
+    public void setLesProduits(ArrayList<Produit> lesProduits) { this.lesProduits = lesProduits; }
+
+    public void addUnProduit (Produit unProduit) {
+        if (lesProduits == null){
+            lesProduits = new ArrayList<Produit>();
+        }
+        lesProduits.add(unProduit);
     }
 }

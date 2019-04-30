@@ -11,6 +11,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        /*Produit unProduit = new Produit("Fromage", 3336590083787L, 100, "lait", 10, 10, 10, 10, 10, 10, 10, 10, 11,10, 10);
+
+        ProduitManager produitmanager = new ProduitManager(this);
+        produitmanager.open();
+
+        produitmanager.addProduit(unProduit);
+
+        produitmanager.close();*/
     }
 
     public void afficheliste(View view){

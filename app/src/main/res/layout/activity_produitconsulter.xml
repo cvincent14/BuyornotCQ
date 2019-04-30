@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textViewCol1"
+            android:id="@+id/contentNom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -316,6 +316,32 @@
                 android:padding="5dp"
                 android:text="Contenue"
                 app:layout_constraintStart_toEndOf="@+id/libSel"
+                tools:text="Contenue" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/sodium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="false">
+
+            <TextView
+                android:id="@+id/libSodium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sodium :"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Sodium :" />
+
+            <TextView
+                android:id="@+id/contentSodium"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Contenue"
+                app:layout_constraintStart_toEndOf="@+id/libSodium"
                 tools:text="Contenue" />
 
         </android.support.constraint.ConstraintLayout>

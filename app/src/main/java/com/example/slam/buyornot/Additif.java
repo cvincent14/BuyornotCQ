@@ -1,27 +1,44 @@
 package com.example.slam.buyornot;
 
+import java.util.ArrayList;
+
 public class Additif {
-    private int addiId;
-    private String addiLibelle;
+    private int id;
+    private String produit;
+    private ArrayList<Produit> lesProduits;
 
-    public Additif(int addiId, String addiLibelle) {
-        this.addiId = addiId;
-        this.addiLibelle = addiLibelle;
+    public Additif() {
     }
 
-    public int getAddiId() {
-        return addiId;
+    public Additif(int id, String produit) {
+        this.id = id;
+        this.produit = produit;
     }
 
-    public void setAddiId(int addiId) {
-        this.addiId = addiId;
+    public int getId() {
+        return id;
     }
 
-    public String getAddiLibelle() {
-        return addiLibelle;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setAddiLibelle(String addiLibelle) {
-        this.addiLibelle = addiLibelle;
+    public String getProduit() {
+        return produit;
+    }
+
+    public void setProduit(String produit) {
+        this.produit = produit;
+    }
+
+    public ArrayList<Produit> getLesProduits() { return lesProduits; }
+
+    public void setLesProduits(ArrayList<Produit> lesProduits) { this.lesProduits = lesProduits; }
+
+    public void addUnProduit (Produit unProduit) {
+        if (lesProduits == null){
+            lesProduits = new ArrayList<Produit>();
+        }
+        lesProduits.add(unProduit);
     }
 }

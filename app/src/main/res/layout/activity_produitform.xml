@@ -34,7 +34,7 @@
                 android:fitsSystemWindows="false">
 
                 <TextView
-                    android:id="@+id/libLib"
+                    android:id="@+id/libLibelle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Libellé :"
@@ -43,12 +43,36 @@
                     tools:text="Libellé :" />
 
                 <EditText
-                    android:id="@+id/formLib"
+                    android:id="@+id/formLibelle"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
                     android:padding="5dp"
-                    app:layout_constraintStart_toEndOf="@+id/libLib" />
+                    app:layout_constraintStart_toEndOf="@+id/libLibelle" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/codeBarre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="false">
+
+                <TextView
+                    android:id="@+id/libCodeBarre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Code Barre :"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Code Barre :" />
+
+                <EditText
+                    android:id="@+id/formCodeBarre"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:padding="5dp"
+                    app:layout_constraintStart_toEndOf="@+id/libCodeBarre" />
             </android.support.constraint.ConstraintLayout>
 
             <android.support.constraint.ConstraintLayout
@@ -123,6 +147,8 @@
                     android:inputType="textPersonName"
                     android:padding="5dp"
                     app:layout_constraintStart_toEndOf="@+id/libQuantite" />
+
+
             </android.support.constraint.ConstraintLayout>
 
             <android.support.constraint.ConstraintLayout
@@ -147,6 +173,7 @@
                     android:inputType="textPersonName"
                     android:padding="5dp"
                     app:layout_constraintStart_toEndOf="@+id/libEnergie" />
+
             </android.support.constraint.ConstraintLayout>
 
             <android.support.constraint.ConstraintLayout
@@ -317,8 +344,58 @@
                     app:layout_constraintStart_toEndOf="@+id/libSel" />
             </android.support.constraint.ConstraintLayout>
 
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/sodium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="false">
+
+                <TextView
+                    android:id="@+id/libSodium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sodium :"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Sodium :" />
+
+                <EditText
+                    android:id="@+id/formSodium"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:padding="5dp"
+                    app:layout_constraintStart_toEndOf="@+id/libSodium" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/fruitsLegumes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="false">
+
+                <TextView
+                    android:id="@+id/libFruitsLegumes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fruits et Legumes :"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Fruits et Legumes :" />
+
+                <EditText
+                    android:id="@+id/formFruitsLegumes"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:padding="5dp"
+                    app:layout_constraintStart_toEndOf="@+id/libFruitsLegumes" />
+            </android.support.constraint.ConstraintLayout>
+
+
             <Button
                 android:id="@+id/Valider"
+                android:onClick="ajout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="valider"

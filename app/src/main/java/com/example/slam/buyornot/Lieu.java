@@ -1,27 +1,43 @@
 package com.example.slam.buyornot;
 
+import java.util.ArrayList;
+
 public class Lieu {
-    private int lieuId;
-    private String lieuLibelle;
+    private int id;
+    private String libelle;
+    private ArrayList<Produit> lesProduits;
 
-    public Lieu(int lieuId, String lieuLibelle){
-        this.lieuId = lieuId;
-        this.lieuLibelle = lieuLibelle;
+    public Lieu(){}
+
+    public Lieu(int id, String libelle) {
+        this.id = id;
+        this.libelle = libelle;
     }
 
-    public int getLieuId() {
-        return lieuId;
+    public int getId() {
+        return id;
     }
 
-    public void setLieuId(int lieuId) {
-        this.lieuId = lieuId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getLieuLibelle() {
-        return lieuLibelle;
+    public String getLibelle() {
+        return libelle;
     }
 
-    public void setLieuLibelle(String lieuLibelle) {
-        this.lieuLibelle = lieuLibelle;
+    public void setLibelle(String libelle) {
+        this.libelle = libelle;
+    }
+
+    public ArrayList<Produit> getLesProduits() { return lesProduits; }
+
+    public void setLesProduits(ArrayList<Produit> lesProduits) { this.lesProduits = lesProduits; }
+
+    public void addUnProduit (Produit unProduit) {
+        if (lesProduits == null){
+            lesProduits = new ArrayList<Produit>();
+        }
+        lesProduits.add(unProduit);
     }
 }

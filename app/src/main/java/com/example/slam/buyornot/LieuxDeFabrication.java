@@ -2,17 +2,17 @@ package com.example.slam.buyornot;
 
 import java.util.ArrayList;
 
-public class Nutriscore {
+public class LieuxDeFabrication {
     private int id;
-    private String produit;
+    private String libelle;
     private ArrayList<Produit> lesProduits;
 
-    public Nutriscore() {
+    public LieuxDeFabrication() {
     }
 
-    public Nutriscore(int id, String produit) {
+    public LieuxDeFabrication(int id, String libelle) {
         this.id = id;
-        this.produit = produit;
+        this.libelle = libelle;
     }
 
     public int getId() {
@@ -23,12 +23,12 @@ public class Nutriscore {
         this.id = id;
     }
 
-    public String getProduit() {
-        return produit;
+    public String getLibelle() {
+        return libelle;
     }
 
-    public void setProduit(String produit) {
-        this.produit = produit;
+    public void setLibelle(String libelle) {
+        this.libelle = libelle;
     }
 
     public ArrayList<Produit> getLesProduits() { return lesProduits; }
@@ -41,4 +41,5 @@ public class Nutriscore {
         }
         lesProduits.add(unProduit);
     }
+
 }

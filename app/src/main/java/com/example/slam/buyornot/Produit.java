@@ -1,87 +1,127 @@
 package com.example.slam.buyornot;
 
+import java.util.ArrayList;
+
 public class Produit {
-    private int produitId;
-    private String produitLibelle;
-    private String produitIngredient;
-    private String produitLien;
-    private float produitQuantite;
-    private float produitEnergie;
+    private int id;
+    private String libelle;
+    private long codeBarre;
+    private int quantite;
+    private String ingredients;
+    private float energie;
     private float matiereGrasse;
-    private float produitAcideGras;
-    private float produitGlucide;
-    private float produitSucre;
-    private float produitFibre;
-    private float produitProteine;
-    private float produitSel;
-    private float produitSodium;
+    private float acidesGras;
+    private float glucides;
+    private float sucres;
+    private float proteine;
+    private float sel;
+    private float sodium;
+    private int nutriscore;
+    private float fruitsLegumes;
+    private float fibresAlimentaires;
+    private ArrayList<Additif> lesAdditifs;
+    private ArrayList<Allergene> lesAllergenes;
+    private ArrayList<Categorie> lesCategories;
+    private CodeEmballeur leCodeEmballage;
+    private ArrayList<Conditionnement> lesConditionnements;
+    private ArrayList<Label> lesLabels;
+    private ArrayList<Lieu> lesLiens;
+    private ArrayList<LieuxDeFabrication> lesLieuxDeFabrications;
+    private ArrayList<Magasin> lesMagasins;
+    private Marque laMarque;
+    private Nova leNova;
+    private Nutriscore leNutriscore;
+    private ArrayList<Pays> lesPaysDOrigine;
+    private ArrayList<Pays> lesPaysDeVente;
 
-    public Produit(int produitId, String produitLibelle, String produitIngredient, String produitLien,
-            float produitQuantite, float produitEnergie, float matiereGrasse, float produitAcideGras,
-            float produitGlucide, float produitSucre, float produitFibre, float produitProteine,
-            float produitSel, float produitSodium){
-        this.produitId = produitId;
-        this.produitLibelle = produitLibelle;
-        this.produitIngredient = produitIngredient;
-        this.produitLien = produitLien;
-        this.produitQuantite = produitQuantite;
-        this.produitEnergie = produitEnergie;
+    public Produit() {
+    }
+
+    public Produit(String libelle, long codeBarre, int quantite, String ingredients, float energie, float matiereGrasse, float acidesGras,
+                   float glucides, float sucres, float proteine, float sel, float sodium, int nutriscore, float fruitsLegumes, float fibresAlimentaires) {
+        this.libelle = libelle;
+        this.codeBarre = codeBarre;
+        this.quantite = quantite;
+        this.ingredients = ingredients;
+        this.energie = energie;
         this.matiereGrasse = matiereGrasse;
-        this.produitAcideGras = produitAcideGras;
-        this.produitGlucide = produitGlucide;
-        this.produitSucre = produitSucre;
-        this.produitFibre = produitFibre;
-        this.produitProteine = produitProteine;
-        this.produitSel = produitSel;
-        this.produitSodium = produitSodium;
+        this.acidesGras = acidesGras;
+        this.glucides = glucides;
+        this.sucres = sucres;
+        this.proteine = proteine;
+        this.sel = sel;
+        this.sodium = sodium;
+        this.nutriscore = nutriscore;
+        this.fruitsLegumes = fruitsLegumes;
+        this.fibresAlimentaires = fibresAlimentaires;
     }
 
-    public int getProduitId() {
-        return produitId;
+    public Produit(int id, String libelle, long codeBarre, int quantite, String ingredients, float energie, float matiereGrasse, float acidesGras,
+                   float glucides, float sucres, float proteine, float sel, float sodium, int nutriscore, float fruitsLegumes, float fibresAlimentaires) {
+        this.id = id;
+        this.libelle = libelle;
+        this.codeBarre = codeBarre;
+        this.quantite = quantite;
+        this.ingredients = ingredients;
+        this.energie = energie;
+        this.matiereGrasse = matiereGrasse;
+        this.acidesGras = acidesGras;
+        this.glucides = glucides;
+        this.sucres = sucres;
+        this.proteine = proteine;
+        this.sel = sel;
+        this.sodium = sodium;
+        this.nutriscore = nutriscore;
+        this.fruitsLegumes = fruitsLegumes;
+        this.fibresAlimentaires = fibresAlimentaires;
     }
 
-    public void setProduitId(int produitId) {
-        this.produitId = produitId;
+    public int getId() {
+        return id;
     }
 
-    public String getProduitLibelle() {
-        return produitLibelle;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setProduitLibelle(String produitLibelle) {
-        this.produitLibelle = produitLibelle;
+    public String getLibelle() {
+        return libelle;
     }
 
-    public String getProduitIngredient() {
-        return produitIngredient;
+    public void setLibelle(String libelle) {
+        this.libelle = libelle;
     }
 
-    public void setProduitIngredient(String produitIngredient) {
-        this.produitIngredient = produitIngredient;
+    public long getCodeBarre() {
+        return codeBarre;
     }
 
-    public String getProduitLien() {
-        return produitLien;
+    public void setCodeBarre(long codeBarre) {
+        this.codeBarre = codeBarre;
     }
 
-    public void setProduitLien(String produitLien) {
-        this.produitLien = produitLien;
+    public int getQuantite() {
+        return quantite;
     }
 
-    public float getProduitQuantite() {
-        return produitQuantite;
+    public void setQuantite(int quantite) {
+        this.quantite = quantite;
     }
 
-    public void setProduitQuantite(float produitQuantite) {
-        this.produitQuantite = produitQuantite;
+    public String getIngredients() {
+        return ingredients;
     }
 
-    public float getProduitEnergie() {
-        return produitEnergie;
+    public void setIngredients(String ingredients) {
+        this.ingredients = ingredients;
     }
 
-    public void setProduitEnergie(float produitEnergie) {
-        this.produitEnergie = produitEnergie;
+    public float getEnergie() {
+        return energie;
+    }
+
+    public void setEnergie(float energie) {
+        this.energie = energie;
     }
 
     public float getMatiereGrasse() {
@@ -92,59 +132,197 @@ public class Produit {
         this.matiereGrasse = matiereGrasse;
     }
 
-    public float getProduitAcideGras() {
-        return produitAcideGras;
+    public float getAcidesGras() {
+        return acidesGras;
     }
 
-    public void setProduitAcideGras(float produitAcideGras) {
-        this.produitAcideGras = produitAcideGras;
+    public void setAcidesGras(float acidesGras) {
+        this.acidesGras = acidesGras;
     }
 
-    public float getProduitGlucide() {
-        return produitGlucide;
+    public float getGlucides() {
+        return glucides;
     }
 
-    public void setProduitGlucide(float produitGlucide) {
-        this.produitGlucide = produitGlucide;
+    public void setGlucides(float glucides) {
+        this.glucides = glucides;
     }
 
-    public float getProduitSucre() {
-        return produitSucre;
+    public float getSucres() {
+        return sucres;
     }
 
-    public void setProduitSucre(float produitSucre) {
-        this.produitSucre = produitSucre;
+    public void setSucres(float sucres) {
+        this.sucres = sucres;
     }
 
-    public float getProduitFibre() {
-        return produitFibre;
+    public float getProteine() {
+        return proteine;
     }
 
-    public void setProduitFibre(float produitFibre) {
-        this.produitFibre = produitFibre;
+    public void setProteine(float proteine) {
+        this.proteine = proteine;
     }
 
-    public float getProduitProteine() {
-        return produitProteine;
+    public float getSel() {
+        return sel;
     }
 
-    public void setProduitProteine(float produitProteine) {
-        this.produitProteine = produitProteine;
+    public void setSel(float sel) {
+        this.sel = sel;
     }
 
-    public float getProduitSel() {
-        return produitSel;
+    public float getSodium() {
+        return sodium;
     }
 
-    public void setProduitSel(float produitSel) {
-        this.produitSel = produitSel;
+    public void setSodium(float sodium) {
+        this.sodium = sodium;
     }
 
-    public float getProduitSodium() {
-        return produitSodium;
+    public int getNutriscore() {
+        return nutriscore;
     }
 
-    public void setProduitSodium(float produitSodium) {
-        this.produitSodium = produitSodium;
+    public void setNutriscore(int nutriscore) {
+        this.nutriscore = nutriscore;
+    }
+
+    public float getFruitsLegumes() {
+        return fruitsLegumes;
+    }
+
+    public void setFruitsLegumes(float fruitsLegumes) { this.fruitsLegumes = fruitsLegumes; }
+
+    public float getFibresAlimentaires() {
+        return fibresAlimentaires;
+    }
+
+    public void setFibresAlimentaires(float fibresAlimentaires) { this.fibresAlimentaires = fibresAlimentaires; }
+
+    public ArrayList<Additif> getLesAdditifs() { return lesAdditifs; }
+
+    public void setLesAdditifs(ArrayList<Additif> lesAdditifs) { this.lesAdditifs = lesAdditifs; }
+
+    public void addUnAdditif (Additif unAdditif) {
+        if (lesAdditifs == null){
+            lesAdditifs = new ArrayList<Additif>();
+        }
+        lesAdditifs.add(unAdditif);
+    }
+
+    public ArrayList<Allergene> getLesAllergenes() { return lesAllergenes; }
+
+    public void setLesAllergenes(ArrayList<Allergene> lesAllergenes) { this.lesAllergenes = lesAllergenes; }
+
+    public void addUnAllergene (Allergene unAllergene) {
+        if (lesAllergenes == null){
+            lesAllergenes = new ArrayList<Allergene>();
+        }
+        lesAllergenes.add(unAllergene);
+    }
+
+    public ArrayList<Categorie> getLesCategories() { return lesCategories; }
+
+    public void setLesCategories(ArrayList<Categorie> lesCategories) { this.lesCategories = lesCategories; }
+
+    public void addUneCategorie (Categorie uneCategorie) {
+        if (lesCategories == null){
+            lesCategories = new ArrayList<Categorie>();
+        }
+        lesCategories.add(uneCategorie);
+    }
+
+    public CodeEmballeur getLeCodeEmballage() { return leCodeEmballage; }
+
+    public void setLeCodeEmballage(CodeEmballeur leCodeEmballage) { this.leCodeEmballage = leCodeEmballage; }
+
+    public ArrayList<Conditionnement> getLesConditionnements() { return lesConditionnements; }
+
+    public void setLesConditionnements(ArrayList<Conditionnement> lesConditionnements) { this.lesConditionnements = lesConditionnements; }
+
+    public void addUnConditionnement (Conditionnement unConditionnement) {
+        if (lesConditionnements == null){
+            lesConditionnements = new ArrayList<Conditionnement>();
+        }
+        lesConditionnements.add(unConditionnement);
+    }
+
+    public ArrayList<Label> getLesLabels() { return lesLabels; }
+
+    public void setLesLabels(ArrayList<Label> lesLabels) { this.lesLabels = lesLabels; }
+
+    public void addUnLabel (Label unLabel) {
+        if (lesLabels == null){
+            lesLabels = new ArrayList<Label>();
+        }
+        lesLabels.add(unLabel);
+    }
+
+    public ArrayList<Lieu> getLesLiens() { return lesLiens; }
+
+    public void setLesLiens(ArrayList<Lieu> lesLiens) { this.lesLiens = lesLiens; }
+
+    public void addUnLien (Lieu unLien) {
+        if (lesLiens == null){
+            lesLiens = new ArrayList<Lieu>();
+        }
+        lesLiens.add(unLien);
+    }
+
+    public ArrayList<LieuxDeFabrication> getLesLieuxDeFabrications() { return lesLieuxDeFabrications; }
+
+    public void setLesLieuxDeFabrications(ArrayList<LieuxDeFabrication> lesLieuxDeFabrications) { this.lesLieuxDeFabrications = lesLieuxDeFabrications; }
+
+    public void addUnLieuDeFabrication (LieuxDeFabrication unLieuDeFabrication) {
+        if (lesLieuxDeFabrications == null){
+            lesLieuxDeFabrications = new ArrayList<LieuxDeFabrication>();
+        }
+        lesLieuxDeFabrications.add(unLieuDeFabrication);
+    }
+
+    public ArrayList<Magasin> getLesMagasins() { return lesMagasins; }
+
+    public void setLesMagasins(ArrayList<Magasin> lesMagasins) { this.lesMagasins = lesMagasins; }
+
+    public void addUnMagasin (Magasin unMagasin) {
+        if (lesMagasins == null){
+            lesMagasins = new ArrayList<Magasin>();
+        }
+        lesMagasins.add(unMagasin);
+    }
+
+    public Marque getLaMarque() { return laMarque; }
+
+    public void setLaMarque(Marque laMarque) { this.laMarque = laMarque; }
+
+    public Nova getLeNova() { return leNova; }
+
+    public void setLeNova(Nova leNova) { this.leNova = leNova; }
+
+    public Nutriscore getLeNutriscore() { return leNutriscore; }
+
+    public void setLeNutriscore(Nutriscore leNutriscore) { this.leNutriscore = leNutriscore; }
+
+    public ArrayList<Pays> getLesPaysDOrigine() { return lesPaysDOrigine; }
+
+    public void setLesPaysDOrigine(ArrayList<Pays> lesPaysDOrigine) { this.lesPaysDOrigine = lesPaysDOrigine; }
+
+    public void addUnPays (Pays unPaysDOrigine) {
+        if (lesPaysDOrigine == null){
+            lesPaysDOrigine = new ArrayList<Pays>();
+        }
+        lesPaysDOrigine.add(unPaysDOrigine);
+    }
+
+    public ArrayList<Pays> getLesPaysDeVente() { return lesPaysDeVente; }
+
+    public void setLesPaysDeVente(ArrayList<Pays> lesPaysDeVente) { this.lesPaysDeVente = lesPaysDeVente; }
+
+    public void addUnPaysDeVente (Pays unPaysDeVente) {
+        if (lesPaysDeVente == null){
+            lesPaysDeVente = new ArrayList<Pays>();
+        }
+        lesPaysDeVente.add(unPaysDeVente);
     }
 }
