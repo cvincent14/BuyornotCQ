@@ -15,6 +15,7 @@ présentes sur les étiquettes des aliments.
 Le projet comporte 3 dossiers :
 
 doc/ -> Regroupe les différents documents importants du projet
+
 app/ et gradle/-> Contient le code source de l'application
 
 
