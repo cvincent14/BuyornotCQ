@@ -27,7 +27,7 @@ Et la nouvelle version pour L'épreuve E4 est disponible ici : https://trello.co
 
 # Objectif de l'application
 
-
+L’application doit permettre aux usagers de pouvoir regarder d'un coup d'oeil la composition d'une aliment.
 
 # Bibliothèques/Framework utilisées
 
