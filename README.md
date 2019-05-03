@@ -19,6 +19,8 @@ doc/ -> Regroupe les différents documents importants du projet
 app/ et gradle/-> Contient le code source de l'application
 
 
+
+
 Le trello utilisé pour le projet en groupe est disponible ici : https://trello.com/b/WY8w5SV9/buy-or-not
 
 Et la nouvelle version pour L'épreuve E4 est disponible ici : https://trello.com/b/9dAnfuRm/buyornotcq
