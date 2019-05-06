@@ -19,11 +19,12 @@ public class MySQLite extends SQLiteOpenHelper {
         @Override
         public void onCreate(SQLiteDatabase sqLiteDatabase) {
             // Création de la base de données
-            // on exécute ici les requêtes de création des tables
-            sqLiteDatabase.execSQL(ProduitManager.CREATE_TABLE_PRODUIT);
+
             // création table "produit"
-            sqLiteDatabase.execSQL(ProduitManager.INSERT_DONNEES);
+            sqLiteDatabase.execSQL(ProduitManager.CREATE_TABLE_PRODUIT);
+
             //insertion de données dans la base
+            sqLiteDatabase.execSQL(ProduitManager.INSERT_DONNEES);
 
 
         }

@@ -19,13 +19,13 @@ public class Produit {
     private int nutriscore;
     private float fruitsLegumes;
     private float fibresAlimentaires;
+    private String lien;
     private ArrayList<Additif> lesAdditifs;
     private ArrayList<Allergene> lesAllergenes;
     private ArrayList<Categorie> lesCategories;
     private CodeEmballeur leCodeEmballage;
     private ArrayList<Conditionnement> lesConditionnements;
     private ArrayList<Label> lesLabels;
-    private ArrayList<Lieu> lesLiens;
     private ArrayList<LieuxDeFabrication> lesLieuxDeFabrications;
     private ArrayList<Magasin> lesMagasins;
     private Marque laMarque;
@@ -38,7 +38,7 @@ public class Produit {
     }
 
     public Produit(String libelle, long codeBarre, int quantite, String ingredients, float energie, float matiereGrasse, float acidesGras,
-                   float glucides, float sucres, float proteine, float sel, float sodium, int nutriscore, float fruitsLegumes, float fibresAlimentaires) {
+                   float glucides, float sucres, float proteine, float sel, float sodium, int nutriscore, float fruitsLegumes, float fibresAlimentaires, String lien) {
         this.libelle = libelle;
         this.codeBarre = codeBarre;
         this.quantite = quantite;
@@ -54,10 +54,11 @@ public class Produit {
         this.nutriscore = nutriscore;
         this.fruitsLegumes = fruitsLegumes;
         this.fibresAlimentaires = fibresAlimentaires;
+        this.lien = lien;
     }
 
     public Produit(int id, String libelle, long codeBarre, int quantite, String ingredients, float energie, float matiereGrasse, float acidesGras,
-                   float glucides, float sucres, float proteine, float sel, float sodium, int nutriscore, float fruitsLegumes, float fibresAlimentaires) {
+                   float glucides, float sucres, float proteine, float sel, float sodium, int nutriscore, float fruitsLegumes, float fibresAlimentaires, String lien) {
         this.id = id;
         this.libelle = libelle;
         this.codeBarre = codeBarre;
@@ -74,6 +75,7 @@ public class Produit {
         this.nutriscore = nutriscore;
         this.fruitsLegumes = fruitsLegumes;
         this.fibresAlimentaires = fibresAlimentaires;
+        this.lien = lien;
     }
 
     public int getId() {
@@ -200,6 +202,14 @@ public class Produit {
 
     public void setFibresAlimentaires(float fibresAlimentaires) { this.fibresAlimentaires = fibresAlimentaires; }
 
+    public String getLien() {
+        return lien;
+    }
+
+    public void setLien(String lien) {
+        this.lien = lien;
+    }
+
     public ArrayList<Additif> getLesAdditifs() { return lesAdditifs; }
 
     public void setLesAdditifs(ArrayList<Additif> lesAdditifs) { this.lesAdditifs = lesAdditifs; }
@@ -257,17 +267,6 @@ public class Produit {
             lesLabels = new ArrayList<Label>();
         }
         lesLabels.add(unLabel);
-    }
-
-    public ArrayList<Lieu> getLesLiens() { return lesLiens; }
-
-    public void setLesLiens(ArrayList<Lieu> lesLiens) { this.lesLiens = lesLiens; }
-
-    public void addUnLien (Lieu unLien) {
-        if (lesLiens == null){
-            lesLiens = new ArrayList<Lieu>();
-        }
-        lesLiens.add(unLien);
     }
 
     public ArrayList<LieuxDeFabrication> getLesLieuxDeFabrications() { return lesLieuxDeFabrications; }

@@ -35,6 +35,30 @@
             tools:text="Un Produit" />
 
         <android.support.constraint.ConstraintLayout
+            android:id="@+id/codeBarre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="false">
+
+            <TextView
+                android:id="@+id/libCodeBarre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingrédient :"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Ingrédient :" />
+
+            <TextView
+                android:id="@+id/contentCodeBarre"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:layout_constraintStart_toEndOf="@+id/libCodeBarre"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
             android:id="@+id/ingredient"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -54,9 +78,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Contenue"
-                app:layout_constraintStart_toEndOf="@+id/libIngredient"
-                tools:text="Contenue" />
+                app:layout_constraintStart_toEndOf="@+id/libIngredient"/>
 
         </android.support.constraint.ConstraintLayout>
 
@@ -78,11 +100,13 @@
             <TextView
                 android:id="@+id/contentLien"
                 android:layout_width="150dp"
+                android:text="Site du produit"
+                tools:text="Site du produit"
+                android:onClick="browser"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Contenue"
                 app:layout_constraintStart_toEndOf="@+id/libLien"
-                tools:text="Contenue" />
+                android:textColor="@color/colorPrimary"/>
 
         </android.support.constraint.ConstraintLayout>
 
@@ -106,9 +130,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Contenue"
-                app:layout_constraintStart_toEndOf="@+id/libQuantite"
-                tools:text="Contenue" />
+                app:layout_constraintStart_toEndOf="@+id/libQuantite"/>
 
         </android.support.constraint.ConstraintLayout>
 
@@ -132,9 +154,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Contenue"
-                app:layout_constraintStart_toEndOf="@+id/libEnergie"
-                tools:text="Contenue" />
+                app:layout_constraintStart_toEndOf="@+id/libEnergie"/>
 
         </android.support.constraint.ConstraintLayout>
 
@@ -158,9 +178,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Contenue"
-                app:layout_constraintStart_toEndOf="@+id/libMatiereGrasse"
-                tools:text="Contenue" />
+                app:layout_constraintStart_toEndOf="@+id/libMatiereGrasse"/>
 
         </android.support.constraint.ConstraintLayout>
 
@@ -184,9 +202,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Contenue"
-                app:layout_constraintStart_toEndOf="@+id/libAcideGras"
-                tools:text="Contenue" />
+                app:layout_constraintStart_toEndOf="@+id/libAcideGras"/>
 
         </android.support.constraint.ConstraintLayout>
 
@@ -210,9 +226,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Contenue"
-                app:layout_constraintStart_toEndOf="@+id/libGlucide"
-                tools:text="Contenue" />
+                app:layout_constraintStart_toEndOf="@+id/libGlucide"/>
 
         </android.support.constraint.ConstraintLayout>
 
@@ -236,9 +250,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Contenue"
-                app:layout_constraintStart_toEndOf="@+id/libSucre"
-                tools:text="Contenue" />
+                app:layout_constraintStart_toEndOf="@+id/libSucre"/>
 
         </android.support.constraint.ConstraintLayout>
 
@@ -262,9 +274,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Contenue"
-                app:layout_constraintStart_toEndOf="@+id/libFibre"
-                tools:text="Contenue" />
+                app:layout_constraintStart_toEndOf="@+id/libFibre"/>
 
         </android.support.constraint.ConstraintLayout>
 
@@ -288,9 +298,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Contenue"
-                app:layout_constraintStart_toEndOf="@+id/libProteine"
-                tools:text="Contenue" />
+                app:layout_constraintStart_toEndOf="@+id/libProteine"/>
 
         </android.support.constraint.ConstraintLayout>
 
@@ -314,9 +322,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Contenue"
-                app:layout_constraintStart_toEndOf="@+id/libSel"
-                tools:text="Contenue" />
+                app:layout_constraintStart_toEndOf="@+id/libSel"/>
 
         </android.support.constraint.ConstraintLayout>
 
@@ -333,16 +339,14 @@
                 android:text="Sodium :"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Sodium :" />
+                tools:text="Sodium :"/>
 
             <TextView
                 android:id="@+id/contentSodium"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Contenue"
-                app:layout_constraintStart_toEndOf="@+id/libSodium"
-                tools:text="Contenue" />
+                app:layout_constraintStart_toEndOf="@+id/libSodium"/>
 
         </android.support.constraint.ConstraintLayout>
         <LinearLayout
@@ -366,7 +370,7 @@
                     android:layout_height="wrap_content"
                     android:text="Retour"
                     android:onClick="back"
-                    android:backgroundTint="@android:color/holo_blue_dark"/>
+                    android:backgroundTint="@color/colorPrimary"/>
                 <Button
                     android:id="@+id/modifier"
                     android:layout_width="match_parent"

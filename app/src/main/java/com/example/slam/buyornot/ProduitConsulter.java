@@ -1,9 +1,12 @@
 package com.example.slam.buyornot;
 
 import android.content.Intent;
+import android.graphics.Paint;
+import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.TextView;
 
@@ -34,17 +37,20 @@ public class ProduitConsulter extends AppCompatActivity {
 
         TextView libelleProduit = (TextView) findViewById(R.id.contentNom);
         libelleProduit.setText(unProduit.getLibelle());
-/*
-        TextView codeBarreProduit = (TextView) findViewById(R.id.codeBarre);
+
+        TextView codeBarreProduit = (TextView) findViewById(R.id.contentCodeBarre);
         long codeB = unProduit.getCodeBarre();
         codeBarreProduit.setText(Long.toString(codeB));
 
-        TextView marque = (TextView) findViewById(R.id.marque);
-        marque.setText(unProduit.getMarque().getProduit());
-*/
         TextView quantite = (TextView) findViewById(R.id.contentQuantite);
         quantite.setText(Integer.toString(unProduit.getQuantite()) + " g");
+
+        TextView lien = (TextView) findViewById(R.id.contentLien);
+        lien.setPaintFlags(lien.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 /*
+        TextView marque = (TextView) findViewById(R.id.marque);
+        marque.setText(unProduit.getMarque().getProduit());
+
         TextView conditionnement = (TextView) findViewById(R.id.conditionnement);
         conditionnement.setText(unProduit.getConditionnement().getLibelle());
 
@@ -139,6 +145,27 @@ public class ProduitConsulter extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if(requestCode == 1) {
             Initconsulter();
+        }
+    }
+
+    public void browser(View view){
+        // nouveau produit
+        Produit unProduit = new Produit();
+        //preparation de la connexion a la base
+        ProduitManager produitmanager = new ProduitManager(this);
+        produitmanager.open();
+        unProduit = produitmanager.getProduit(id);
+        produitmanager.close();
+
+        //on recupere l'url du produit
+        String url =unProduit.getLien();
+        Uri uri = Uri.parse(url);
+
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        // Verify that the intent will resolve to an activity
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            // Here we use an intent without a Chooser unlike the next example
+            startActivity(intent);
         }
     }
 

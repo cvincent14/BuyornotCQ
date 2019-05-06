@@ -24,6 +24,7 @@ public class ProduitManager {
     public static final String KEY_NUTRISCORE_PRODUIT="pro_nutriscore";
     public static final String KEY_FRUITLEGUMES_PRODUIT="pro_fruitLegumes";
     public static final String KEY_FIBRES_PRODUIT="pro_fibres";
+    public static final String KEY_LIEN_PRODUIT="pro_lien";
 
     public static final String CREATE_TABLE_PRODUIT = "CREATE TABLE "+TABLE_NAME+
             " ( "+KEY_ID_PRODUIT+" INTEGER primary key AUTOINCREMENT," +
@@ -41,13 +42,14 @@ public class ProduitManager {
             " "+KEY_SODIUM_PRODUIT+" FLOAT," +
             " "+KEY_NUTRISCORE_PRODUIT+" INT," +
             " "+KEY_FRUITLEGUMES_PRODUIT+" FLOAT," +
-            " "+KEY_FIBRES_PRODUIT+" FLOAT" +
-            " );";
+            " "+KEY_FIBRES_PRODUIT+" FLOAT," +
+            " "+KEY_LIEN_PRODUIT+" TEXT );";
 
     public static final String INSERT_DONNEES = "INSERT INTO produit (pro_id, pro_libelle, pro_codeBarre, pro_quantite, pro_ingredients, pro_energie, pro_matiereGrasse, pro_acidesGras," +
-            "pro_glucide, pro_sucre, pro_proteine, pro_sel, pro_sodium, pro_nutriscore, pro_fruitLegumes, pro_fibres) VALUES" +
-            "(1,\"Teurgoule de la Sée\", 3488790000214, 100, \"Lait entier 78 % riz 10%, sucre 12% vanille\", 122, 3.5, 0.09,18.3,0,0.043,0.017,1,0,0,0)," +
-            "(2,\"Caprice des Dieux\", 3161712963223 , 100, \"Lait de vache pasteurisé de France, crème, sel, ferments lactiques.\", 333, 30, 21, 0.8, 1.4, 15.3, 1.4, 0.551, 3, 0, 0);";
+            "pro_glucide, pro_sucre, pro_proteine, pro_sel, pro_sodium, pro_nutriscore, pro_fruitLegumes, pro_fibres, pro_lien) VALUES" +
+            "(1,\"Teurgoule de la Sée\", 3488790000214, 100, \"Lait entier 78 % riz 10%, sucre 12% vanille\", 122, 3.5, 0.09,18.3,0,0.043,0.017,1,0,0,0,\"https://fr.openfoodfacts.org/produit/3488790000214/teurgoule-de-la-see-fabriquee-a-la-ferme-du-gaec-muris\")," +
+            "(2,\"Caprice des Dieux\", 3161712963223 , 100, \"Lait de vache pasteurisé de France, crème, sel, ferments lactiques.\", 333, 30, 21, 0.8, 1.4, 15.3, 1.4, 0.551, 3, 0, 0,\"https://www.capricedesdieux.com/produit/caprice-des-dieux#subnav-prod\");";
+
     private MySQLite maBaseSQLite; // notre gestionnaire du fichier SQLite
     private SQLiteDatabase db;
     // Constructeur
@@ -84,6 +86,7 @@ public class ProduitManager {
         values.put(KEY_NUTRISCORE_PRODUIT,produit.getNutriscore());
         values.put(KEY_FRUITLEGUMES_PRODUIT,produit.getFruitsLegumes());
         values.put(KEY_FIBRES_PRODUIT,produit.getFibresAlimentaires());
+        values.put(KEY_LIEN_PRODUIT,produit.getLien());
 
         // insert() retourne l'id du nouvel enregistrement inséré, ou -1 en cas d'erreur
         return db.insert(TABLE_NAME,null,values);
@@ -109,6 +112,7 @@ public class ProduitManager {
         values.put(KEY_NUTRISCORE_PRODUIT,produit.getNutriscore());
         values.put(KEY_FRUITLEGUMES_PRODUIT,produit.getFruitsLegumes());
         values.put(KEY_FIBRES_PRODUIT,produit.getFibresAlimentaires());
+        values.put(KEY_LIEN_PRODUIT,produit.getLien());
 
         String where = KEY_ID_PRODUIT+" = ?";
         String[] whereArgs = {produit.getId()+""};
@@ -142,6 +146,7 @@ public class ProduitManager {
             a.setNutriscore(c.getInt(c.getColumnIndex(KEY_NUTRISCORE_PRODUIT)));
             a.setFruitsLegumes(c.getFloat(c.getColumnIndex(KEY_FRUITLEGUMES_PRODUIT)));
             a.setFibresAlimentaires(c.getFloat(c.getColumnIndex(KEY_FIBRES_PRODUIT)));
+            a.setLien(c.getString(c.getColumnIndex(KEY_LIEN_PRODUIT)));
             c.close();
         }
         return a;
@@ -151,4 +156,4 @@ public class ProduitManager {
         // sélection de tous les enregistrements de la table
         return db.rawQuery("SELECT * FROM "+TABLE_NAME, null);
     }
-} // class AnimalManager
+} // class ProduitManager

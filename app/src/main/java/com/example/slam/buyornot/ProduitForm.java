@@ -1,5 +1,7 @@
 package com.example.slam.buyornot;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,11 +9,29 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class ProduitForm extends AppCompatActivity {
-
+    protected String lien = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_produitform);
+    }
+
+    public void ajoutURL(View view){
+        AlertDialog.Builder urlAlert = new AlertDialog.Builder(this);
+        urlAlert.setTitle("Votre lien url");
+        urlAlert.setView(R.layout.alert_lien_produit);
+        urlAlert.setPositiveButton("Enregistrer", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                lien= ((EditText) ((AlertDialog) dialog).findViewById(R.id.contenturl)).getText().toString();
+            }
+        });
+        urlAlert.setNegativeButton("Annuler", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        urlAlert.create().show();
     }
 
     public void ajout(View view){
@@ -19,7 +39,7 @@ public class ProduitForm extends AppCompatActivity {
             String libelle = ((EditText) (findViewById(R.id.formLibelle))).getText().toString();
             Long codeBarre = Long.valueOf(((EditText) findViewById(R.id.formCodeBarre)).getText().toString());
             String ingredient = ((EditText) findViewById(R.id.formIngredient)).getText().toString();
-            String lien = ((EditText) findViewById(R.id.formLien)).getText().toString();
+            //String lien = ((EditText) findViewById(R.id.formLien)).getText().toString();
             float sodium = Float.valueOf((((EditText) (findViewById(R.id.formSodium))).getText().toString()));
             float fruitsLegumes = Float.valueOf((((EditText) (findViewById(R.id.formFruitsLegumes))).getText().toString()));
             float energie = Float.valueOf((((EditText) (findViewById(R.id.formEnergie))).getText().toString()));
@@ -33,7 +53,7 @@ public class ProduitForm extends AppCompatActivity {
             int quantite = Integer.parseInt(((EditText) findViewById(R.id.formQuantite)).getText().toString());
             int nutriscore = 0;
 
-            Produit unProduit = new Produit(libelle,codeBarre,quantite,ingredient,energie,matiereGrasse,acideGras,glucide,sucre,proteine,sel,sodium,nutriscore,fruitsLegumes,fibre);
+            Produit unProduit = new Produit(libelle,codeBarre,quantite,ingredient,energie,matiereGrasse,acideGras,glucide,sucre,proteine,sel,sodium,nutriscore,fruitsLegumes,fibre,lien);
             //connexion a la bdd
             ProduitManager bdd = new ProduitManager(this);
             bdd.open();

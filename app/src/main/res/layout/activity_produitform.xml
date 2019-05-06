@@ -114,14 +114,20 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="Lien : " />
-
-                <EditText
+                <Button
+                    android:id="@+id/btLien"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="ajoutURL"
+                    app:layout_constraintStart_toEndOf="@+id/libLien"
+                    android:text="Ajout d'une URL"/>
+                <!--<EditText
                     android:id="@+id/formLien"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
                     android:padding="5dp"
-                    app:layout_constraintStart_toEndOf="@+id/libLien" />
+                    app:layout_constraintStart_toEndOf="@+id/libLien" />-->
             </android.support.constraint.ConstraintLayout>
 
             <android.support.constraint.ConstraintLayout
