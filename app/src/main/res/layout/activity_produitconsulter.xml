@@ -368,6 +368,12 @@
                     android:onClick="back"
                     android:backgroundTint="@android:color/holo_blue_dark"/>
                 <Button
+                    android:id="@+id/modifier"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Modifier"
+                    android:onClick="modifier"/>
+                <Button
                     android:id="@+id/supprimer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProduitModifier">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <EditText
+                        android:id="@+id/contentNom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Un Produit"
+                        android:textAlignment="center"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="30sp"
+                        tools:text="Un Produit" />
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/codeBarre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fitsSystemWindows="false">
+
+                        <TextView
+                            android:id="@+id/libCodeBarre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ingrédient :"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Ingrédient :" />
+
+                        <EditText
+                            android:id="@+id/contentCodeBarre"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            app:layout_constraintStart_toEndOf="@+id/libCodeBarre"/>
+
+                    </android.support.constraint.ConstraintLayout>
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/ingredient"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fitsSystemWindows="false">
+
+                        <TextView
+                            android:id="@+id/libIngredient"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ingrédient :"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Ingrédient :" />
+
+                        <EditText
+                            android:id="@+id/contentIngredient"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            app:layout_constraintStart_toEndOf="@+id/libIngredient"/>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/lien"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fitsSystemWindows="false">
+
+                        <TextView
+                            android:id="@+id/libLien"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Lien :"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Lien :" />
+
+                        <EditText
+                            android:id="@+id/contentLien"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            app:layout_constraintStart_toEndOf="@+id/libLien"/>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/quantite"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fitsSystemWindows="false">
+
+                        <TextView
+                            android:id="@+id/libQuantite"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Quantité :"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Quantité :" />
+
+                        <EditText
+                            android:id="@+id/contentQuantite"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            app:layout_constraintStart_toEndOf="@+id/libQuantite"/>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/energie"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fitsSystemWindows="false">
+
+                        <TextView
+                            android:id="@+id/libEnergie"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Energie :"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Energie :" />
+
+                        <EditText
+                            android:id="@+id/contentEnergie"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            app:layout_constraintStart_toEndOf="@+id/libEnergie"/>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/matiereGrasse"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fitsSystemWindows="false">
+
+                        <TextView
+                            android:id="@+id/libMatiereGrasse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Matière grasse :"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Matière grasse :" />
+
+                        <EditText
+                            android:id="@+id/contentMatiereGrasse"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            app:layout_constraintStart_toEndOf="@+id/libMatiereGrasse"/>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/acideGras"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fitsSystemWindows="false">
+
+                        <TextView
+                            android:id="@+id/libAcideGras"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Acide gras :"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Acide gras :" />
+
+                        <EditText
+                            android:id="@+id/contentAcideGras"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            app:layout_constraintStart_toEndOf="@+id/libAcideGras"/>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/glucide"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fitsSystemWindows="false">
+
+                        <TextView
+                            android:id="@+id/libGlucide"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Glucide :"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Glucide :" />
+
+                        <EditText
+                            android:id="@+id/contentGlucide"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            app:layout_constraintStart_toEndOf="@+id/libGlucide"/>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/sucre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fitsSystemWindows="false">
+
+                        <TextView
+                            android:id="@+id/libSucre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sucre :"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Sucre :" />
+
+                        <EditText
+                            android:id="@+id/contentSucre"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            app:layout_constraintStart_toEndOf="@+id/libSucre"/>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/fibre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fitsSystemWindows="false">
+
+                        <TextView
+                            android:id="@+id/libFibre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fibre :"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Fibre :" />
+
+                        <EditText
+                            android:id="@+id/contentFibre"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            app:layout_constraintStart_toEndOf="@+id/libFibre"/>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/proteine"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fitsSystemWindows="false">
+
+                        <TextView
+                            android:id="@+id/libProteine"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Protéine :"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Protéine :" />
+
+                        <EditText
+                            android:id="@+id/contentProteine"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            app:layout_constraintStart_toEndOf="@+id/libProteine"/>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/sel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fitsSystemWindows="false">
+
+                        <TextView
+                            android:id="@+id/libSel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sel :"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Sel :" />
+
+                        <EditText
+                            android:id="@+id/contentSel"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            app:layout_constraintStart_toEndOf="@+id/libSel"/>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/sodium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fitsSystemWindows="false">
+
+                        <TextView
+                            android:id="@+id/libSodium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sodium :"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Sodium :" />
+
+                        <EditText
+                            android:id="@+id/contentSodium"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            app:layout_constraintStart_toEndOf="@+id/libSodium"/>
+
+                    </android.support.constraint.ConstraintLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+                        <Button
+                            android:id="@+id/Annuler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Annuler"
+                            android:onClick="annuler"
+                            android:backgroundTint="@android:color/holo_blue_dark"/>
+                        <Button
+                            android:id="@+id/modifier"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Modifier"
+                            android:onClick="modifier"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+        </ScrollView>
+</android.support.constraint.ConstraintLayout>

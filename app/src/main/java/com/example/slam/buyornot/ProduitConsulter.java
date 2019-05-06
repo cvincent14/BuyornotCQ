@@ -1,6 +1,7 @@
 package com.example.slam.buyornot;
 
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,10 @@ public class ProduitConsulter extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_produitconsulter);
+        Initconsulter();
+    }
+
+    public void Initconsulter(){
 
         Intent intent = getIntent();
 
@@ -118,8 +123,8 @@ public class ProduitConsulter extends AppCompatActivity {
 
         TextView sodium = (TextView) findViewById(R.id.contentSodium);
         sodium.setText(Float.toString(unProduit.getSodium()) + " g");
-
     }
+
 
     public void supprimer(View view){
         ProduitManager produitmanager = new ProduitManager(this);
@@ -127,6 +132,20 @@ public class ProduitConsulter extends AppCompatActivity {
         produitmanager.supProduit(id);
         produitmanager.close();
         finish();
+    }
+
+    //refresh la page
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if(requestCode == 1) {
+            Initconsulter();
+        }
+    }
+
+    public void modifier(View view){
+        Intent intent = new Intent(this, ProduitModifier.class);
+        intent.putExtra("id",id);
+        startActivityForResult(intent, 1);
     }
 
 
