@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 public class ProduitConsulter extends AppCompatActivity {
-
+    private int id = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,7 +16,7 @@ public class ProduitConsulter extends AppCompatActivity {
         Intent intent = getIntent();
 
         // vérifie qu'une valeur est associée à la clé “id”
-        int id = intent.getIntExtra("id",-1);
+        id = intent.getIntExtra("id",-1);
 
         // nouveau produit
         Produit unProduit = new Produit();
@@ -120,6 +120,15 @@ public class ProduitConsulter extends AppCompatActivity {
         sodium.setText(Float.toString(unProduit.getSodium()) + " g");
 
     }
+
+    public void supprimer(View view){
+        ProduitManager produitmanager = new ProduitManager(this);
+        produitmanager.open();
+        produitmanager.supProduit(id);
+        produitmanager.close();
+        finish();
+    }
+
 
     public void back(View view){
         finish();

@@ -24,8 +24,8 @@ public class ProduitListe extends AppCompatActivity {
         initList();
     }
 
+    // construit la liste des produits
     private void initList() {
-
         String[] columns = new String[] { "_id", "col1", "col2" };
         MatrixCursor matrixCursor= new MatrixCursor(columns);
 
@@ -35,6 +35,7 @@ public class ProduitListe extends AppCompatActivity {
 
         idProduits = new ArrayList<>();
         Cursor c = produitManager.getLesProduits();
+        //boucle sur les produit
         if (c.moveToFirst())
         {
             do {
@@ -45,16 +46,14 @@ public class ProduitListe extends AppCompatActivity {
         }
         c.close();
 
-
         String[] from = new String[] {"col1", "col2"};
 
         int[] to = new int[] { R.id.proNom, R.id.codNova};
 
-        SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
-                R.layout.row_activity_produit_lister, matrixCursor, from, to, 0);
-
+        SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.row_activity_produit_lister, matrixCursor, from, to, 0);
         ListView lv = (ListView) findViewById(R.id.ListeProduits);
         lv.setAdapter(adapter);
+
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -64,26 +63,25 @@ public class ProduitListe extends AppCompatActivity {
 
     }
 
+    //revoit vers ajouter un produit
     public void addproduit(View view) {
         Intent intent = new Intent(this, ProduitForm.class);
-        Bundle bundle = new Bundle();
-        intent.putExtras(bundle);
         startActivityForResult(intent, 1);
     }
-
+    //revoit vers consulter un produit
     public void consulteproduit(Integer idProduit) {
         Intent intent = new Intent(this, ProduitConsulter.class);
         intent.putExtra("id",idProduit);
-        startActivity(intent);
+        startActivityForResult(intent, 1);
     }
-
+    //refresh la page
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if(requestCode == 1) {
             initList();
         }
     }
-
+    // revenir au menue
     public void back(View view){
         finish();
     }

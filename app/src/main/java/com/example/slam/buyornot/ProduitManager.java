@@ -114,11 +114,11 @@ public class ProduitManager {
         String[] whereArgs = {produit.getId()+""};
         return db.update(TABLE_NAME, values, where, whereArgs);
     }
-    public int supProduit(Produit produit) {
+    public int supProduit(int id) {
         // suppression d'un enregistrement
         // valeur de retour : (int) nombre de lignes affectées par la clause WHERE, 0 sinon
         String where = KEY_ID_PRODUIT+" = ?";
-        String[] whereArgs = {produit.getId()+""};
+        String[] whereArgs = {Integer.toString(id)};
         return db.delete(TABLE_NAME, where, whereArgs);
     }
     public Produit getProduit(int id) {

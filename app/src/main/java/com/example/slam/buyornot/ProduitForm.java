@@ -4,7 +4,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class ProduitForm extends AppCompatActivity {
@@ -35,19 +34,17 @@ public class ProduitForm extends AppCompatActivity {
             int nutriscore = 0;
 
             Produit unProduit = new Produit(libelle,codeBarre,quantite,ingredient,energie,matiereGrasse,acideGras,glucide,sucre,proteine,sel,sodium,nutriscore,fruitsLegumes,fibre);
+            //connexion a la bdd
             ProduitManager bdd = new ProduitManager(this);
-
             bdd.open();
-
+            //insertion dans la base
             bdd.addProduit(unProduit);
 
             bdd.close();
             finish();
         }catch (Exception error){
-            Toast.makeText(getApplicationContext(), "Veuillez remplir tout les champs", Toast.LENGTH_LONG).show();
-
+            Toast.makeText(getApplicationContext(), "Veuillez remplir tous les champs", Toast.LENGTH_LONG).show();
         }
-
     }
 
     public void back(View view){
