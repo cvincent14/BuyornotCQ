@@ -52,21 +52,21 @@ public class ProduitManager {
 
     private MySQLite maBaseSQLite; // notre gestionnaire du fichier SQLite
     private SQLiteDatabase db;
-    // Constructeur
-    public ProduitManager(Context context)
-    {
+    // Constructeurs
+    public ProduitManager(Context context) {
         maBaseSQLite = MySQLite.getInstance(context);
     }
-    public void open()
-    {
+
+    public void open() {
         //on ouvre la table en lecture/écriture
         db = maBaseSQLite.getWritableDatabase();
     }
-    public void close()
-    {
+
+    public void close() {
         //on ferme l'accès à la BDD
         db.close();
     }
+
     public long addProduit(Produit produit) {
         // Ajout d'un enregistrement dans la table
         ContentValues values = new ContentValues();
@@ -118,6 +118,7 @@ public class ProduitManager {
         String[] whereArgs = {produit.getId()+""};
         return db.update(TABLE_NAME, values, where, whereArgs);
     }
+
     public int supProduit(int id) {
         // suppression d'un enregistrement
         // valeur de retour : (int) nombre de lignes affectées par la clause WHERE, 0 sinon
@@ -125,6 +126,7 @@ public class ProduitManager {
         String[] whereArgs = {Integer.toString(id)};
         return db.delete(TABLE_NAME, where, whereArgs);
     }
+
     public Produit getProduit(int id) {
         // Retourne le produit dont l'id est passé en paramètre
         Produit a=new Produit();

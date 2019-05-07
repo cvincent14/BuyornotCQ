@@ -57,9 +57,8 @@ public class ProduitForm extends AppCompatActivity {
             //connexion a la bdd
             ProduitManager bdd = new ProduitManager(this);
             bdd.open();
-            //insertion dans la base
-            bdd.addProduit(unProduit);
-
+                //insertion dans la base
+                bdd.addProduit(unProduit);
             bdd.close();
             finish();
         }catch (Exception error){

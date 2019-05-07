@@ -1,14 +1,23 @@
 package com.example.slam.buyornot;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.razerdp.widget.animatedpieview.AnimatedPieView;
+import com.razerdp.widget.animatedpieview.AnimatedPieViewConfig;
+import com.razerdp.widget.animatedpieview.callback.OnPieSelectListener;
+import com.razerdp.widget.animatedpieview.data.IPieInfo;
+import com.razerdp.widget.animatedpieview.data.SimplePieInfo;
 
 public class ProduitConsulter extends AppCompatActivity {
     private int id = 0;
@@ -129,6 +138,33 @@ public class ProduitConsulter extends AppCompatActivity {
 
         TextView sodium = (TextView) findViewById(R.id.contentSodium);
         sodium.setText(Float.toString(unProduit.getSodium()) + " g");
+
+
+        AnimatedPieView animatedPieView =findViewById(R.id.pieView);
+        AnimatedPieViewConfig config = new AnimatedPieViewConfig();
+        config.addData(new SimplePieInfo(unProduit.getSodium(), Color.parseColor("#808080"),"Sodium"));
+        config.addData(new SimplePieInfo(unProduit.getSel(), Color.parseColor("#0F0000"),"Sel"));
+        config.addData(new SimplePieInfo(unProduit.getProteine(), Color.parseColor("#00F000"),"Proteines"));
+        config.addData(new SimplePieInfo(unProduit.getFibresAlimentaires(), Color.parseColor("#000F00"),"Fibre"));
+        config.addData(new SimplePieInfo(unProduit.getGlucides(), Color.parseColor("#0000F0"),"Glucides"));
+        config.addData(new SimplePieInfo(unProduit.getAcidesGras(), Color.parseColor("#00000F"),"Acides Gras"));
+        config.addData(new SimplePieInfo(unProduit.getMatiereGrasse()-unProduit.getAcidesGras(), Color.parseColor("#FF0000"),"Matière Grasse"));
+        config.duration(100);
+        config.drawText(true);
+        config.strokeMode(false);
+        config.textSize(15);
+
+        config.selectListener(new OnPieSelectListener<IPieInfo>() {
+            @Override
+            public void onSelectPie(@NonNull IPieInfo pieInfo, boolean isFloatUp) {
+                Toast.makeText(ProduitConsulter.this, pieInfo.getDesc() + " " + pieInfo.getValue() + " g", Toast.LENGTH_LONG).show();
+            }
+        });
+
+
+
+        animatedPieView.applyConfig(config);
+        animatedPieView.start();
     }
 
 
